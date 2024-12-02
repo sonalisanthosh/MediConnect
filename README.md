@@ -1,0 +1,1 @@
+Hi! My name is Sonali Santhosh and I am a student programmer interested in developing an app called MediConnect, that is dedicated to promoting healthcare acesss to underserved communities with the use of AI.
