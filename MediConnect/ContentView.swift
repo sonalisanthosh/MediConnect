@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var emailOrPhone = ""
+    @State private var password = ""
+    
     var body: some View {
         VStack{
             Image("topper")
@@ -19,36 +22,35 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom, 50.0)
+            
+            // Email/Phone Input Field
             ZStack{
                 Capsule()
                     .padding(0.0)
                     .frame(width: 350.0, height: 35.0)
-                    .accentColor(/*@START_MENU_TOKEN@*/.purple/*@END_MENU_TOKEN@*/)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                     .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                     .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
-                HStack{
-                    Text("Enter Email or Phone Number")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.083, green: 0.151, blue: 0.325)/*@END_MENU_TOKEN@*/)
-                        .padding(.leading, 35.0)
-                    Spacer()
-                }
+                TextField("Enter Email or Phone Number", text: $emailOrPhone)
+                    .padding(.horizontal, 35.0)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.083, green: 0.151, blue: 0.325)/*@END_MENU_TOKEN@*/)
+                   
             }
+            
+            // Password Input Field
             ZStack{
                 Capsule()
                     .padding(0.0)
                     .frame(width: 350.0, height: 35.0)
-                    .accentColor(/*@START_MENU_TOKEN@*/.purple/*@END_MENU_TOKEN@*/)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                     .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                     .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
-                HStack{
-                    Text("Enter Password")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.083, green: 0.151, blue: 0.325)/*@END_MENU_TOKEN@*/)
-                        .padding(.leading, 35.0)
-                    Spacer()
-                }
+                SecureField("Enter Password", text: $password)
+                    .padding(.horizontal, 35.0)
+                    .foregroundColor(Color(red: 0.083, green: 0.151, blue: 0.325))
             }
+            
+            // Remember Me and Forgot Password
             HStack{
                 Text("Remember me")
                     .padding(.leading, 30.0)
@@ -60,18 +62,23 @@ struct ContentView: View {
             .padding(.top, 3.0)
             .font(.footnote)
             .foregroundColor(Color.gray)
-            ZStack{
-                Capsule()
-                    .frame(width: 350.0, height: 35.0)
-                    .accentColor(/*@START_MENU_TOKEN@*/.purple/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(Color(red: 0.083, green: 0.151, blue: 0.325))
-                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
-                Text("Log In")
-                    .font(.title3)
-                    .fontWeight(.heavy)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
-            }
+            
+            
+            // Login Button
+            Button(action: {
+                print("Email: \(emailOrPhone), Password: \(password)")
+            }) {
+                ZStack {
+                    Capsule()
+                        .frame(width: 350.0, height: 35.0)
+                        .foregroundColor(Color(red: 0.083, green: 0.151, blue: 0.325))
+                    Text("Log In")
+                        .font(.title3)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                            }
+                        }
+            // Sign-Up Option
             Spacer()
             HStack{
                 Text("Don't have an account?")
