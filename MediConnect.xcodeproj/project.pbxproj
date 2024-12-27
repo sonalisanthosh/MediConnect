@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980B14572D19F47000EF4367 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 980B14562D19F47000EF4367 /* KeychainAccess */; };
 		98425CE52CD2FA2D00986968 /* MediConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98425CE42CD2FA2D00986968 /* MediConnectApp.swift */; };
 		98425CE72CD2FA2D00986968 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98425CE62CD2FA2D00986968 /* ContentView.swift */; };
 		98425CE92CD2FA3700986968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98425CE82CD2FA3700986968 /* Assets.xcassets */; };
 		98425CEC2CD2FA3700986968 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98425CEB2CD2FA3700986968 /* Preview Assets.xcassets */; };
+		986956B32D1F3DB000383C51 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986956B22D1F3DB000383C51 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		98425CE62CD2FA2D00986968 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98425CE82CD2FA3700986968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98425CEB2CD2FA3700986968 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		986956B22D1F3DB000383C51 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980B14572D19F47000EF4367 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				98425CE42CD2FA2D00986968 /* MediConnectApp.swift */,
 				98425CE62CD2FA2D00986968 /* ContentView.swift */,
+				986956B22D1F3DB000383C51 /* HomeView.swift */,
 				98425CE82CD2FA3700986968 /* Assets.xcassets */,
 				98425CEA2CD2FA3700986968 /* Preview Content */,
 			);
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = MediConnect;
+			packageProductDependencies = (
+				980B14562D19F47000EF4367 /* KeychainAccess */,
+			);
 			productName = MediConnect;
 			productReference = 98425CE12CD2FA2D00986968 /* MediConnect.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 98425CD82CD2FA2C00986968;
+			packageReferences = (
+				980B14552D19F47000EF4367 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 98425CE22CD2FA2D00986968 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986956B32D1F3DB000383C51 /* HomeView.swift in Sources */,
 				98425CE72CD2FA2D00986968 /* ContentView.swift in Sources */,
 				98425CE52CD2FA2D00986968 /* MediConnectApp.swift in Sources */,
 			);
@@ -339,6 +351,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		980B14552D19F47000EF4367 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		980B14562D19F47000EF4367 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 980B14552D19F47000EF4367 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98425CD92CD2FA2C00986968 /* Project object */;
 }
