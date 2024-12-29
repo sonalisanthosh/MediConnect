@@ -158,7 +158,7 @@ struct ContentView: View {
                     ZStack {
                         Capsule()
                             .frame(width: 350.0, height: 35.0)
-                            .foregroundColor(Color.blue)
+                            .foregroundColor(Color(red: 0.083, green: 0.151, blue: 0.325))
                         if authViewModel.isLoading {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
